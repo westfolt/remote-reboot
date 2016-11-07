@@ -23,6 +23,14 @@ namespace remote_reboot
         public MainWindow()
         {
             InitializeComponent();
+            commandWindowScrollViewer.Content = "asdasdas\nasjkdbasidniasidi\nofsokdfmkosdf\nsdofmosdmfoisdofmsdom\n" +
+                                        "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
+                                        "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
+                                        "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
+                                        "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
+                                        "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
+                                        "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
+                                        "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n";
         }
     }
 }

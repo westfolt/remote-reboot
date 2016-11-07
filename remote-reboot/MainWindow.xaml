@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.65*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="rpcmaButton" Content="Отключить RPCM-A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"  Width="140" Height="30" Grid.Row="0"/>
+        <Button x:Name="rpcmbButton" Content="Отключить RPCM-B" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0"  Width="140" Height="30" Grid.Row="0"/>
+        <Button x:Name="chlanButton" Content="Сменить рабочий LAN" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,90,0,0" Width="140" Height="30" Grid.Row="0"/>
+        <GroupBox x:Name="groupBox" Header="Информация о системе" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="113" Width="335" BorderThickness="2" BorderBrush="Black">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="lanMasterTextBlock" Foreground="Red" FontSize="14" Margin="10,0,0,0"  VerticalAlignment="Center" FontWeight="Bold" Text="Lan Master Unknown" Grid.Row="0"/>
+                <TextBlock x:Name="rhpMasterTextBlock" Foreground="Red" FontSize="14" Margin="10,0,0,0"  VerticalAlignment="Center" FontWeight="Bold" Text="RHP Master Unknown" Grid.Row="1"/>
+            </Grid>
+        </GroupBox>
+        <ScrollViewer x:Name="commandWindowScrollViewer" Background="Black" Foreground="LightGray" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10" Width="490" Height="155" Grid.Row="1"/>
     </Grid>
 </Window>
