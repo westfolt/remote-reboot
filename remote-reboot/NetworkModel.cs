@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using MinimalisticTelnet;
 
@@ -11,37 +14,30 @@ namespace remote_reboot
     //describes current network status and methods to interact with remote pc's
     class NetworkModel
     {
+        public string rpcmALanAIP = "192.168.0.68";//"200.1.1.49";
+        public string rpcmALanBIP = "200.1.2.49";
+        public string rpcmBLanAIP = "192.168.0.99";//"200.1.1.177";
+        public string rpcmBLanBIP = "200.1.2.177";
         private bool lanAMaster;//пока не используется, далее будет метод для определения активного лан
-        private bool rpcmAOn;
-        private bool rpcmBOn;
-        private TelnetConnection telnetConnection;
+        //private bool lanBMaster;
+
+        public bool RpcmAOn { get; set; }
+        public bool RpcmBOn { get; set; }
+        public TelnetConnection telnetConnection { get; set; }
         private string displayNow;//хранит содержимое коммандной строки общения с удаленным пк
-
-        private const string rpcmALanAIP = "200.1.1.49";
-        private const string rpcmALanBIP = "200.1.2.49";
-        private const string rpcmBLanAIP = "200.1.1.177";
-        private const string rpcmBLanBIP = "200.1.2.177";
-
+        
         public NetworkModel()
         {
-            lanAMaster = true;
-            if (IsAlive(rpcmALanAIP) || IsAlive(rpcmALanBIP))
-                rpcmAOn = true;
-            else
-                rpcmAOn = false;
-            if (IsAlive(rpcmBLanAIP) || IsAlive(rpcmBLanBIP))
-                rpcmBOn = true;
-            else
-                rpcmBOn = false;
+            lanAMaster = true;//сменить когда будет код определения лан
         }
 
-        private bool IsAlive(string IPAddress)
+        public bool IsAlive(string ipAddress)
         {
             PingReply pingReply;
             Ping ping = new Ping();
             try
             {
-                pingReply = ping.Send(System.Net.IPAddress.Parse(IPAddress));
+                pingReply = ping.Send(System.Net.IPAddress.Parse(ipAddress));
             }
             catch (Exception ex)
             {
@@ -56,10 +52,6 @@ namespace remote_reboot
             }
             return false;
         }
-
-        public void RebootRemote(string ipAddress)
-        {
-            
-        }
+        
     }
 }

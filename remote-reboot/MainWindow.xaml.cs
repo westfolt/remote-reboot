@@ -23,14 +23,19 @@ namespace remote_reboot
         public MainWindow()
         {
             InitializeComponent();
-            commandWindowScrollViewer.Content = "asdasdas\nasjkdbasidniasidi\nofsokdfmkosdf\nsdofmosdmfoisdofmsdom\n" +
+            /*commandWindowScrollViewer.Content = "asdasdas\nasjkdbasidniasidi\nofsokdfmkosdf\nsdofmosdmfoisdofmsdom\n" +
                                         "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
                                         "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
                                         "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
                                         "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
                                         "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
                                         "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n" +
-                                        "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n";
+                                        "sdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\nsdofmosdmfoisdofmsdom\n";*/
+            
+            this.DataContext = new ViewModel();
+            //Binding binding = new Binding();
+            //binding.Source = viewModel.RpcmAOn;
+            //commandWindowScrollViewer.SetBinding(ContentProperty, binding);
         }
     }
 }
